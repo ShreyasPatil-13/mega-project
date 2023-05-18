@@ -4,9 +4,10 @@ const HeroMain = () => {
     return (
         <div>
             <div className="px-4 pt-5  text-center border-bottom" style={{ backgroundColor: '#d6f0e0' }}>
-                <h1 className="display-4 fw-bold">Centered screenshot</h1>
+                <h1 className="display-2 fw-bold text-success">FarmX</h1>
+                <h2 className='display-8'> Revolutionizing the Agriculture Industry</h2>
                 <div className="col-lg-6 mx-auto">
-                    <p className="lead mb-4">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
+                    <p className="lead mb-4 fw-normal">Join the movement towards a more efficient, transparent, and inclusive agricultural ecosystem with our groundbreaking platform</p>
                     <div className="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
                         <button type="button" className="btn btn-success btn-lg px-4 me-sm-3 shadow-lg">Explore</button>
                     </div>
