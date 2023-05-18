@@ -5,16 +5,15 @@ import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
-import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Logo from '../../utils/imgs/logo.png';
-import { Card } from '@mui/material';
+import { Card, IconButton } from '@mui/material';
+import { ArrowBackIos } from '@mui/icons-material';
+import { Link } from 'react-router-dom';
 
 function Copyright(props) {
     return (
@@ -46,6 +45,7 @@ const theme = createTheme({
     },
 });
 
+
 export default function SignIn() {
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -58,7 +58,16 @@ export default function SignIn() {
 
     return (
         <ThemeProvider theme={theme}>
-            <Grid container component="main" sx={{ height: '100vh' }}>
+            <Grid container component="main" sx={{
+                height: '100vh',
+                backgroundImage: `linear-gradient( to right, rgba(0, 0, 0, 1), rgba(0, 0,0, 0)), url(https://source.unsplash.com/random/?agriculture) `,
+                backgroundRepeat: 'no-repeat',
+                backgroundColor: (t) =>
+                    t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+            }}
+            >
                 <CssBaseline />
                 <Grid
                     item
@@ -67,45 +76,78 @@ export default function SignIn() {
                     md={6}
                     sx={{
                         display: { xs: 'none', sm: 'block' },
-                        backgroundImage: 'url(https://source.unsplash.com/random/?farm,farming)',
-                        backgroundRepeat: 'no-repeat',
-                        backgroundColor: (t) =>
-                            t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center',
+
+                        // backgroundColor: 'rgba(255,255,255, 0.15)',
+                        // boxShadow: '0 0 5px 10px rgba(0,0,0,0.15)',
+                        // backdropFilter:'blur(25px)'
+
+                        // backgroundImage: 'url(https://source.unsplash.com/random/?farm,farming)',
+                        // backgroundRepeat: 'no-repeat',
+                        // backgroundColor: (t) =>
+                        //     t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
+                        // backgroundSize: 'cover',
+                        // backgroundPosition: 'center',
                     }}
                 >
-                    <img src={Logo} alt="logo" height={70}
-                    />
+                    <a href='/'><img src={Logo} alt="logo" height={80} /></a>
+                    <Box sx={{
+                        p: { xs: 0, sm: 5 },
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'start',
+                    }}>
+                        <Typography component='h1' variant='h1' sx={{
+                            color: 'primary.main',
+                            textShadow: '1px 1px 10px rgba(0, 0, 0, 0.4)',
+                            fontWeight: 500
+                        }}>Welcome to <strong>FarmX</strong></Typography>
+                        <Typography component='h1' variant='h3'
+                            sx={{
+                                color: '#fff',
+                                textShadow: '1px 1px 10px rgba(0, 0, 0, 0.4)',
+                                fontWeight: 500
+                            }}
+                        >Login to your account to get started</Typography>
+                    </Box>
 
                 </Grid>
-                <Grid item xs={12} sm={8} md={6} component={Paper} elevation={6} square>
+                <Grid item xs={12} sm={8} md={6} elevation={6} square>
                     <Box
                         sx={{
-                            my: 8,
-                            mx: 4,
+                            mt: 8,
+                            mb:5,
+                            mx: { xs: 2, sm: 4 },
                             display: 'flex',
                             flexDirection: 'column',
                             alignItems: 'center',
                         }}
                     >
                         <Card
-                        elevation={5}
+                            elevation={5}
                             sx={{
-                                borderRadius:10,
-                                p:{xs:5, sm:10},
+                                borderRadius: 5,
+                                p: { xs: 3, sm: 10 },
                                 display: 'flex',
                                 flexDirection: 'column',
                                 alignItems: 'center',
                             }}
                         >
+                            <Grid container spacing={2} >
+                                <Grid item sm={5} xs={4}>
+                                    <IconButton sx={{ mb: 2, color: 'primary.main' }} href='/'>
+                                        <ArrowBackIos />
+                                    </IconButton>
+                                </Grid>
+                                <Grid item sm={7} xs={8}>
+                                    <Avatar sx={{ m: 1, ml: 3, bgcolor: 'secondary.main' }}>
+                                        <LockOutlinedIcon />
+                                    </Avatar>
+                                    <Typography component="h1" variant="h5">
+                                        Sign In
+                                    </Typography>
+                                </Grid>
 
-                            <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-                                <LockOutlinedIcon />
-                            </Avatar>
-                            <Typography component="h1" variant="h5">
-                                Sign in
-                            </Typography>
+                            </Grid>
                             <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
                                 <TextField
                                     margin="normal"
@@ -116,6 +158,7 @@ export default function SignIn() {
                                     name="email"
                                     autoComplete="email"
                                     autoFocus
+
                                 />
                                 <TextField
                                     margin="normal"
@@ -132,6 +175,8 @@ export default function SignIn() {
                                     label="Remember me"
                                 />
                                 <Button
+                                    component={Link}
+                                    to='/farmerRegistration'
                                     type="submit"
                                     fullWidth
                                     variant="contained"
@@ -141,12 +186,12 @@ export default function SignIn() {
                                 </Button>
                                 <Grid container>
                                     <Grid item xs>
-                                        <Link href="#" variant="body2">
+                                        <Link to="#" variant="body2" >
                                             Forgot password?
                                         </Link>
                                     </Grid>
                                     <Grid item>
-                                        <Link href="#" variant="body2">
+                                        <Link to="/signup" variant="body2">
                                             {"Don't have an account? Sign Up"}
                                         </Link>
                                     </Grid>
@@ -157,6 +202,6 @@ export default function SignIn() {
                     </Box>
                 </Grid>
             </Grid>
-        </ThemeProvider>
+        </ThemeProvider >
     );
 }
