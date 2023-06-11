@@ -13,11 +13,10 @@ const NewsList = () => {
             try {
                 setIsLoading(true);
                 const currentDate = new Date().toISOString().slice(0, 10); 
-                const response = await fetch(`https://newsapi.org/v2/everything?q=agriculture&from=2023-04-30&apiKey=ad9f0afe0a0f489bb2c52c80ea80fbb1&${currentDate}`);
+                const response = await fetch(`https://newsapi.org/v2/everything?q=agriculture&from=2023-05-10&apiKey=ad9f0afe0a0f489bb2c52c80ea80fbb1&${currentDate}`);
                 const data = await response.json();
                 setNewsData(data);
                 setIsLoading(false);
-                console.log(newsData);
             } catch (error) {
                 setError(error.message);
                 setIsLoading(false);

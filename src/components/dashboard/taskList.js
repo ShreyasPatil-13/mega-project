@@ -1,21 +1,53 @@
 import { Paper, Typography, IconButton, Box, InputBase, Divider, List, ListItem, ListItemText, ListItemIcon, Checkbox, Button } from '@mui/material';
-import { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Add, Delete, Send } from '@mui/icons-material';
+import axios from 'axios';
+import { baseURL } from '../../utils/constants/Constants';
+import { useAuth0 } from '@auth0/auth0-react';
 
 const Todo = () => {
     const [todos, setTodos] = useState([]);
     const [input, setInput] = useState('');
+    // const [id, setId] = useState('');
+    // const [task, setTask] = useState([]);
     const [isChecked, setIsChecked] = useState([]);
     const [showInput, setShowInput] = useState(false);
+
+
+    // const { user } = useAuth0();
+
+    // useEffect(() => {
+    //     editTask();
+    //     checkEmailExists();
+    // }, []);
+
+    // const checkEmailExists = async () => {
+    //     const email = user.email;
+    //     try {
+    //         const response = await axios.get(`${baseURL}/check-email/${email}`);
+    //         setTask(response.data);
+    //     } catch (error) {
+    //         console.log(error);
+    //     }
+    // };
+
+    // const editTask = async () => {
+    //     setId(task.map((value) => { return value._id }));
+    //     await axios.put(`${baseURL}/update/${id}`, { tasks: todos });
+    //     console.log("status : updated ");
+    // }
 
     const addTodo = (e) => {
         e.preventDefault();
         if (input !== '') {
-            setTodos([input, ...todos]);
+            setTodos([...todos, input]);
+            // editTask();
+            // editTask();
             setIsChecked([false, ...isChecked]);
             setInput('');
             setShowInput(false);
         }
+
     };
 
     const toggleCheckbox = (index) => {
@@ -121,6 +153,7 @@ const Todo = () => {
                         </>
                         );
                     })}
+
                 </List>
             </Box>
         </Box>

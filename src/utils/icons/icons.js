@@ -187,11 +187,44 @@ function PenIcon(props) {
     )
 }
 
+function TrashIcon(props) {
+    return (
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-eraser" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M19 20h-10.5l-4.21 -4.3a1 1 0 0 1 0 -1.41l10 -10a1 1 0 0 1 1.41 0l5 5a1 1 0 0 1 0 1.41l-9.2 9.3" />
+            <path d="M18 13.3l-6.3 -6.3" />
+        </svg>
+    )
+}
+
+function FlowerIcon(props) {
+    return (
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-supernova" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M12 12m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+            <path d="M15 15h.5c3.038 0 5.5 -1.343 5.5 -3s-2.462 -3 -5.5 -3c-1.836 0 -3.462 .49 -4.46 1.245" />
+            <path d="M9 9h-.5c-3.038 0 -5.5 1.343 -5.5 3s2.462 3 5.5 3c1.844 0 3.476 -.495 4.474 -1.255" />
+            <path d="M15 9v-.5c0 -3.038 -1.343 -5.5 -3 -5.5s-3 2.462 -3 5.5c0 1.833 .49 3.457 1.241 4.456" />
+            <path d="M9 15v.5c0 3.038 1.343 5.5 3 5.5s3 -2.462 3 -5.5c0 -1.842 -.494 -3.472 -1.252 -4.47" />
+        </svg>
+    )
+}
+
+function CloseIcon(props) {
+    return (
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M18 6l-12 12" />
+            <path d="M6 6l12 12" />
+        </svg>
+    )
+}
+
 
 
 export {
     DashboardIcon, HomeIcon, ResetIcon, LicenseIcon,
     SchemeIcon, UserIcon, FilterIcon, WindIcon,
-    MenuIcon, NotifyIcon, CalendarIcon,PenIcon,
-    WeatherIcon, MapSearchIcon, TaskIcon, NewsIcon
+    MenuIcon, NotifyIcon, CalendarIcon, PenIcon,CloseIcon,
+    WeatherIcon, MapSearchIcon, TaskIcon, NewsIcon, TrashIcon, FlowerIcon
 };

@@ -6,7 +6,7 @@ const StoryCards = () => {
     return (
         <div>
             <div className="container px-4 py-5" id="custom-cards">
-            <h2 class="pb-2 border-bottom">Our Story</h2>
+            <h2 className="pb-2 border-bottom">Our Story</h2>
                 <div className="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
                     <div className="col">
                         <div className="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style={{backgroundImage:"url(https://source.unsplash.com/random/200X200/?crops)"}}>
@@ -17,7 +17,7 @@ const StoryCards = () => {
                                         <img src={logo} alt="Bootstrap" width="32" height="32" className="rounded-circle border border-white"/>
                                     </li>
                                     <li className="d-flex align-items-center me-3">
-                                        <small>Earth</small>
+                                        <small>India</small>
                                     </li>
                                     <li className="d-flex align-items-center">
                                         <small>3d</small>
@@ -55,7 +55,7 @@ const StoryCards = () => {
                                         <img src={logo} alt="Bootstrap" width="32" height="32" className="rounded-circle border border-white"/>
                                     </li>
                                     <li className="d-flex align-items-center me-3">
-                                        <small>California</small>
+                                        <small>India</small>
                                     </li>
                                     <li className="d-flex align-items-center">
                                         <small>5d</small>
